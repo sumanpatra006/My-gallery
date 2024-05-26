@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+}
+nav{
+    padding: 2vw;
+}
+.main{
+    height: 100vh;
+}
+.main>p{
+    position: absolute;
+    rotate: -90deg;
+    left: -8%;
+    bottom: 50%;
+}
+.images{
+    display: flex;
+    justify-content: space-evenly ;
+    align-items: center;
+    overflow: visible;
+    gap: 30vw;
+    padding: 2vw 17vw;
+    padding-left: 20vw;
+}
+.box{
+    min-width: 60vw;
+    height: 70vh;
+    background-color: red;
+    background-image: url(./Assets/ocean.jpg);
+    background-size: cover;
+    position: relative;
+    display: flex;
+
+}
+.box img{
+    width: 100%;
+    height: 100%;
+    transition: all 2s ease;
+    animation-delay: 0.5s;
+}
+.text {
+    width: 100%;
+    height: 100%;
+    padding: 5vw;
+    color: white;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transition: all 1.5s ease;
+    transition-delay: 2s;
+    
+}
+.text h3{
+    letter-spacing: 10px;
+    line-height: 5px;
+}
+.text h1{
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 10px;
+}
+.text p{
+    width: 30%;
+    font-size: 0.5rem;
+}
+@keyframes zoom{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.75,1.7);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes second{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes third{
+    0%{
+        transform: translate();
+    }
+    40%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translate(0);
+
+    }
+}
+.box:hover{
+    animation: zoom 10s ;
+    animation-timing-function: cubic-bezier(0.05, 1, 0.2, 1);
+}
+.box:hover .text{
+    animation: second 4s ;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1.2s;
+}
+.box:hover .third{
+    animation: third 6s cubic-bezier(0.00, 0, 1, 1) ;
+    animation-delay: 1.2s;
+}
+.gallery{
+    height: 100vh;
+    width: 100%;
+}
+.important{
+    height: 22vw;
+    width: 30vw;
+    background-color: red;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+.gallery{
+    margin-top: 5vw;
+    text-align: center;
+}
+.gallery h1{
+    font-weight: 400;
+    font-size: 2.1rem;
+    letter-spacing: 5px;
+}
+.gallery>h3{
+    font-weight: 500;
+    font-family: cursive;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+.part1{
+    padding: 5vw 3vw;
+}
+.important img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.trans{
+    height: 40%;
+    width: 100%;
+    background: linear-gradient(transparent,rgba(0, 0, 0, 0.568));
+    position: absolute;
+    padding: 1.3vw;
+    color: white;
+    bottom: -40%;
+    transition: all ease 0.6s ;
+}
+.elem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.elem i{
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 5px;
+    transition: all ease 0.3s;
+}
+.elem:nth-child(1){
+    text-transform: uppercase;
+}
+.elem i:hover{
+    color: red;
+    border-color: red;
+}
+.important:hover .trans{
+    bottom: 0;
+}
+.trans p{
+    text-align: start;
+    font-size: 0.7rem;
+}
+.part1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.red{
+    color: red;
+    border-color: red;
+}
+@media (max-width: 500px ) {
+    .main>p{
+        left: -25%;
+        bottom: 50%;
+    }
+    .images{
+        margin-top: 7vh;
+    }
+    .text{
+        padding-left: 3vh;
+    }
+    .text h3{
+        line-height: 20px;
+    }
+    .text h1{
+        font-size: 2.5rem;
+        line-height: 42px;
+    }
+    .text p{
+        width: 50%;
+    }
+    .gallery h1{
+        font-size: 1.5rem;
+    }
+    .gallery>h3{
+        font-size: 1rem;
+    }
+    .important{
+        height: 60vw;
+        width: 90vh
+    }
+    .trans p{
+        padding-top: 8px;
+    }
+}
